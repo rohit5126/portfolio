@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  background: #f5f5f5;
+}
+input, textarea, select, button {
+  font-size: 14px;
+}
+button {
+  cursor: pointer;
+}
