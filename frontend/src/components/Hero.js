@@ -3,10 +3,10 @@ import React, { useEffect, useState } from 'react';
 // Edit this to change what the terminal "types" out on load
 const SCRIPT = [
   '$ whoami',
-  'rohit5126 — DevOps Engineer',
+  'Rohit Kumar — Software Engineer',
   '',
   '$ cat about.txt',
-  'Building CI/CD pipelines, container platforms, and infrastructure as code.',
+  'Software Engineer with around 4 years in multicloud infrastructure support (AWS, Azure) and observability (Grafana, Loki, Promtail, Prometheus) across 150+ production applications, transitioning into DevOps/SRE. Led resolution of 35+ P1/P2 incidents while maintaining 98% SLA compliance, and automated patch management/provisioning across 40+ servers using Python, Bash, and Ansible - cutting manual effort by up to 35%. Hands-on with Docker, Kubernetes, Amazon EKS, Helm, Terraform, AWS Lambda, AWS Secrets Manager, and DevSecOps CI/CD (Trivy, SonarQube, GitLeaks).',
 ];
 
 function Hero({ config, metrics }) {

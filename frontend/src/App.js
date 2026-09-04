@@ -1,19 +1,21 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { getProjects } from './api';
+import { getProjects, logVisit } from './api';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
+import Experience from './components/Experience';
 import ProjectCard from './components/ProjectCard';
+import Contact from './components/Contact';
 import './App.css';
 
 // Edit these to your real details
 const CONFIG = {
   resumeUrl: '/resume.pdf',
-  email: 'rohitrajput5126@gmail.com',
+  email: 'you@example.com',
   github: 'https://github.com/rohit5126',
 };
 
 // Repos that shouldn't show up in the grid (your profile repo, private scratch work, etc.)
-const EXCLUDED_REPOS = ['rohit5126', 'Private-project'];
+const EXCLUDED_REPOS = ['rohit5126', 'Private-project', 'portfolio','ansible-practice','devboard-kubernetes-kind-cluster',''];
 
 function App() {
   const [projects, setProjects] = useState([]);
@@ -21,6 +23,7 @@ function App() {
 
   useEffect(() => {
     getProjects().then((res) => setProjects(res.data));
+    logVisit();
   }, []);
 
   const visibleProjects = useMemo(
@@ -54,6 +57,7 @@ function App() {
     <div className="page">
       <Hero config={CONFIG} metrics={metrics} />
       <Skills />
+      <Experience />
 
       <section className="projects">
         <div className="projects-head">
@@ -81,6 +85,8 @@ function App() {
           </div>
         )}
       </section>
+
+      <Contact />
 
       <footer className="footer">
         <a href={CONFIG.github} target="_blank" rel="noreferrer">

@@ -328,3 +328,117 @@
     font-size: 22px;
   }
 }
+
+/* Skills categories */
+.skills-category {
+  margin-bottom: 16px;
+}
+
+.skills-category-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+/* Experience */
+.experience {
+  margin-bottom: 64px;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.experience-item {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 20px;
+}
+
+.experience-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.experience-role {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.experience-dates {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.experience-company {
+  font-size: 13px;
+  color: var(--accent);
+  margin-top: 4px;
+}
+
+.experience-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 10px 0 0;
+  line-height: 1.5;
+}
+
+/* Contact */
+.contact {
+  margin-bottom: 64px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 480px;
+}
+
+.form-input {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 12px;
+  color: var(--text);
+  font-family: var(--font-sans);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.form-textarea {
+  min-height: 100px;
+  resize: vertical;
+  font-family: var(--font-sans);
+}
+
+.contact-form .btn {
+  align-self: flex-start;
+}
+
+.form-status {
+  font-size: 13px;
+  margin: 0;
+}
+
+.form-status-ok {
+  color: var(--green);
+}
+
+.form-status-error {
+  color: #e5605a;
+}
