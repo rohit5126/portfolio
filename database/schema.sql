@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS portfolio_db;
-USE portfolio_db;
+CREATE DATABASE IF NOT EXISTS portfolio;
+USE portfolio;
 
 CREATE TABLE IF NOT EXISTS projects (
   id INT AUTO_INCREMENT PRIMARY KEY,
