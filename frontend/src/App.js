@@ -8,7 +8,7 @@ import './App.css';
 // Edit these to your real details
 const CONFIG = {
   resumeUrl: '/resume.pdf',
-  email: 'you@example.com',
+  email: 'rohitrajput5126@gmail.com',
   github: 'https://github.com/rohit5126',
 };
 
