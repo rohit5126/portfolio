@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_URL = 'http://13.60.174.101:5000/api/projects';
+// Set REACT_APP_API_URL in your .env for production (e.g. https://yourdomain.com/api/projects)
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api/projects';
 
 export const getProjects = () => axios.get(API_URL);
 export const createProject = (project) => axios.post(API_URL, project);

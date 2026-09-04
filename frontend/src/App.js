@@ -1,37 +1,93 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { getProjects } from './api';
+import Hero from './components/Hero';
+import Skills from './components/Skills';
+import ProjectCard from './components/ProjectCard';
+import './App.css';
+
+// Edit these to your real details
+const CONFIG = {
+  resumeUrl: '/resume.pdf',
+  email: 'you@example.com',
+  github: 'https://github.com/rohit5126',
+};
+
+// Repos that shouldn't show up in the grid (your profile repo, private scratch work, etc.)
+const EXCLUDED_REPOS = ['rohit5126', 'Private-project'];
 
 function App() {
   const [projects, setProjects] = useState([]);
+  const [activeLanguage, setActiveLanguage] = useState('All');
 
   useEffect(() => {
     getProjects().then((res) => setProjects(res.data));
   }, []);
 
+  const visibleProjects = useMemo(
+    () => projects.filter((p) => !EXCLUDED_REPOS.includes(p.name)),
+    [projects]
+  );
+
+  const languages = useMemo(() => {
+    const set = new Set(visibleProjects.map((p) => p.language).filter(Boolean));
+    return ['All', ...Array.from(set)];
+  }, [visibleProjects]);
+
+  const filteredProjects = useMemo(
+    () =>
+      activeLanguage === 'All'
+        ? visibleProjects
+        : visibleProjects.filter((p) => p.language === activeLanguage),
+    [visibleProjects, activeLanguage]
+  );
+
+  const metrics = useMemo(
+    () => ({
+      repoCount: visibleProjects.length,
+      languageCount: languages.length - 1,
+      starCount: visibleProjects.reduce((sum, p) => sum + (p.stars || 0), 0),
+    }),
+    [visibleProjects, languages]
+  );
+
   return (
-    <div style={{ maxWidth: 900, margin: '40px auto', fontFamily: 'sans-serif' }}>
-      <h1>My Portfolio</h1>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-        {projects.map((p) => (
-          <div key={p.id} style={{ border: '1px solid #ccc', borderRadius: 8, padding: 16 }}>
-            <h3>{p.name}</h3>
-            <p>{p.description}</p>
-            <p style={{ fontSize: 12, color: '#666' }}>
-              {p.language} • ⭐ {p.stars} • 🍴 {p.forks}
-            </p>
-            {p.topics && (
-              <p style={{ fontSize: 12 }}>{p.topics.split(',').join(', ')}</p>
-            )}
-            <a href={p.github_url} target="_blank" rel="noreferrer">GitHub</a>
-            {p.live_url && (
-              <>
-                {' | '}
-                <a href={p.live_url} target="_blank" rel="noreferrer">Live</a>
-              </>
-            )}
+    <div className="page">
+      <Hero config={CONFIG} metrics={metrics} />
+      <Skills />
+
+      <section className="projects">
+        <div className="projects-head">
+          <h2 className="section-title">Projects</h2>
+          <div className="filter-tabs">
+            {languages.map((lang) => (
+              <button
+                key={lang}
+                className={lang === activeLanguage ? 'filter-tab active' : 'filter-tab'}
+                onClick={() => setActiveLanguage(lang)}
+              >
+                {lang}
+              </button>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
+
+        {filteredProjects.length === 0 ? (
+          <p className="empty-state">No projects match this filter yet.</p>
+        ) : (
+          <div className="projects-grid">
+            {filteredProjects.map((p) => (
+              <ProjectCard key={p.id} project={p} />
+            ))}
+          </div>
+        )}
+      </section>
+
+      <footer className="footer">
+        <a href={CONFIG.github} target="_blank" rel="noreferrer">
+          GitHub
+        </a>
+        <a href={`mailto:${CONFIG.email}`}>Email</a>
+      </footer>
     </div>
   );
 }
