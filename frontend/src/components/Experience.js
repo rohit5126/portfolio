@@ -29,7 +29,13 @@ function Experience() {
               </span>
             </div>
             <div className="experience-company">{e.company}</div>
-            {e.description && <p className="experience-desc">{e.description}</p>}
+            {e.description && (
+              <ul className="experience-bullets">
+                {e.description.split('\n').filter(Boolean).map((line, i) => (
+                  <li key={i}>{line}</li>
+                ))}
+              </ul>
+            )}
           </div>
         ))}
       </div>

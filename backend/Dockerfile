@@ -24,4 +24,4 @@ USER app
 
 EXPOSE 5000
 
-CMD ["sh", "-c", "python scripts/import_github.py && python app.py"]
+CMD ["sh", "-c", "python scripts/import_github.py && python scripts/import_json_data.py && python app.py"]

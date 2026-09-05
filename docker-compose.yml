@@ -1,0 +1,51 @@
+services:
+  my-mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: portfolio
+      MYSQL_DATABASE: portfolio
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    networks:
+      - port-net
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    ports:
+      - "3306:3306"
+
+  backend:
+    image: rohit5126/portfolio-backend:latest
+    env_file:
+      - .env
+    ports:
+      - "5000:5000"
+    networks:
+      - port-net
+    depends_on:
+      my-mysql: 
+        condition: service_healthy
+
+  frontend:
+    image: rohit5126/portfolio-frontend:latest
+    ports:
+      - "3000:80"
+    networks:
+      - port-net
+
+networks:
+  port-net:
+    driver: bridge
+
+volumes:
+  mysql-data:
+    
+
+
+
+  
+

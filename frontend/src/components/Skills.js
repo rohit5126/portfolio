@@ -11,7 +11,7 @@ const FALLBACK = [
   { name: 'aws', category: '' },
   { name: 'linux', category: '' },
   { name: 'python', category: '' },
-  { name: 'javascript', category: '' },
+  { name: 'Bash Scripting', category: '' },
 ];
 
 function Skills() {
@@ -24,14 +24,14 @@ function Skills() {
   }, []);
 
   const grouped = skills.reduce((acc, s) => {
-    const key = s.category || 'Stack';
+    const key = s.category || 'Skills';
     (acc[key] = acc[key] || []).push(s);
     return acc;
   }, {});
 
   return (
     <section className="skills">
-      <h2 className="section-title">Stack</h2>
+      <h2 className="section-title">Skills</h2>
       {Object.entries(grouped).map(([category, items]) => (
         <div className="skills-category" key={category}>
           {Object.keys(grouped).length > 1 && (

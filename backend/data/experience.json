@@ -1,0 +1,9 @@
+[
+  {
+    "company": "LTM",
+    "role": "Software Engineer",
+    "start_date": "2022-09-09",
+    "end_date": null,
+    "description": "Monitored 150+ production applications using Grafana and Prometheus dashboards for real time observability, proactively identifying and resolving performance and availability issues before end-user impact.\nAutomated repetitive troubleshooting, health checks, and reporting workflows using Python and Bash scripting, cutting manual triage effort by an estimated 30% and standardizing incident response across the team.\nAutomated instance configuration, OS level patch management, and firewall/CIDR-scoped access provisioning across 80+ AWS and Azure servers using Ansible playbooks - cutting manual configuration time by an estimated 35% and reducing environment-related incidents by an estimated 20% by resolving multi-region connectivity issues.\nLed resolution of 35+ P1/P2 escalated incidents, including a critical production printing outage - ran root cause analysis, restarted failed services, and partnered with the application vendor, driving recurrence to zero over 6 months.\nManaged 20-30+ ServiceNow tickets daily across a 24/7 global support model while owning configuration, license renewal, and version upgrade management for 150+ applications, maintaining 98% SLA compliance and audit-ready deployments."
+  }
+]

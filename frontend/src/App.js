@@ -4,7 +4,6 @@ import Hero from './components/Hero';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
 import ProjectCard from './components/ProjectCard';
-import Contact from './components/Contact';
 import './App.css';
 
 // Edit these to your real details
@@ -85,8 +84,6 @@ function App() {
           </div>
         )}
       </section>
-
-      <Contact />
 
       <footer className="footer">
         <a href={CONFIG.github} target="_blank" rel="noreferrer">

@@ -1,0 +1,9 @@
+[
+  { "name": "Docker", "category": "DevOps", "proficiency": 90 },
+  { "name": "Kubernetes", "category": "DevOps", "proficiency": 80 },
+  { "name": "Terraform", "category": "DevOps", "proficiency": 75 },
+  { "name": "Ansible", "category": "DevOps", "proficiency": 70 },
+  { "name": "AWS", "category": "Cloud", "proficiency": 80 },
+  { "name": "Python", "category": "Languages", "proficiency": 85 },
+  { "name": "JavaScript", "category": "Languages", "proficiency": 70 }
+]

@@ -8,6 +8,7 @@ RUN npm ci
 
 COPY . .
 
+
 RUN npm run build
 
 #stage 2
@@ -15,7 +16,6 @@ RUN npm run build
 FROM nginx:alpine
 
 COPY --from=prod /app/build /usr/share/nginx/html
-
 
 EXPOSE 80
 
