@@ -1,12 +1,12 @@
 import axios from 'axios';
 
-// Set REACT_APP_API_URL in your .env for production (e.g. https://yourdomain.com/api/projects)
-const PROJECTS_URL = process.env.REACT_APP_API_URL || 'http://16.171.253.89:5000/api/projects/';
-const API_ROOT = PROJECTS_URL.replace(/\/api\/projects\/?$/, '/api');
+// Relative path — browser sends this to nginx, nginx proxies to the backend container
+const PROJECTS_URL = '/api/projects/';
+const API_ROOT = '/api';
 
-const SKILLS_URL = `${API_ROOT}/skills`;
-const EXPERIENCE_URL = `${API_ROOT}/experience`;
-const STATS_URL = `${API_ROOT}/stats`;
+const SKILLS_URL = `${API_ROOT}/skills/`;
+const EXPERIENCE_URL = `${API_ROOT}/experience/`;
+const STATS_URL = `${API_ROOT}/stats/`;
 
 export const getProjects = () => axios.get(PROJECTS_URL);
 export const createProject = (project) => axios.post(PROJECTS_URL, project);
