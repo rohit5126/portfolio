@@ -114,9 +114,9 @@ http://localhost:3000
 
 ### Refreshing Data
 
-* GitHub repos: re-run import_github.py anytime - it upserts by github_url, safe to repeat.
+* **GitHub repos:** re-run `import_github.py anytime` - it upserts by github_url, safe to repeat.
 
-* Skills/experience: edit the JSON files, then re-run import_json_data.py - it replaces the tables' contents each time.
+* **Skills/experience:** edit the JSON files, then re-run `import_json_data.py` - it replaces the tables contents each time.
 
 ### Image Size
 
