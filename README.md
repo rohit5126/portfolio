@@ -120,12 +120,17 @@ http://localhost:3000
 
 ### Image Size
 
-Reduced Image size from GB to MB.
+**Reduced Image size more than 50%.**
+
 current image size - 
 
 <img width="900" height="74" alt="image" src="https://github.com/user-attachments/assets/c561e91e-a5cf-4e97-a427-3e6fa996acf7" />
 
-reduced image size using multistage docker file with minimal base image and minimal number of layers.
+Previous image size -
+
+<img width="745" height="85" alt="image" src="https://github.com/user-attachments/assets/270e4068-50be-494c-878a-ad0e8a788c21" />
+
+**reduced image size using multistage docker file with minimal base image and minimal number of layers.**
 
 ---
 
