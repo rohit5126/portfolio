@@ -56,10 +56,16 @@ function Hero({ config, metrics }) {
               View resume
             </a>
             <a className="btn" href={`mailto:${config.email}`}>
-              Contact
+              Email
             </a>
             <a className="btn" href={config.github} target="_blank" rel="noreferrer">
               GitHub
+            </a>
+            <a className="btn" href={config.linkedin} target="_blank" rel="noreferrer">
+              LinkedIn
+            </a>
+            <a className="btn" href={`tel:${config.phone}`}>
+              Phone
             </a>
           </div>
 

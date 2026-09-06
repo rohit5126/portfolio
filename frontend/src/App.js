@@ -13,6 +13,8 @@ const CONFIG = {
   resumeUrl: '/resume.pdf',
   email: 'rohitrajput5126@gmail.com',
   github: 'https://github.com/rohit5126',
+  linkedin: 'https://www.linkedin.com/in/rohit-5126-kumar/',
+  phone: '+919310064361',
 };
 
 // Repos that shouldn't show up in the grid (your profile repo, private scratch work, etc.)
