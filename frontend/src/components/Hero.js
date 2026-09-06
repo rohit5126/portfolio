@@ -24,51 +24,59 @@ function Hero({ config, metrics }) {
 
   return (
     <section className="hero">
-      <div className="terminal">
-        <div className="terminal-bar">
-          <span className="dot dot-red" />
-          <span className="dot dot-yellow" />
-          <span className="dot dot-green" />
-          <span className="terminal-title">rohit@portfolio</span>
+      <div className="hero-row">
+        <div className="hero-photo-col">
+          <img className="hero-photo" src="/profile-photo.jpg" alt="Rohit Kumar" />
         </div>
-        <div className="terminal-body">
-          {shownLines.map((line, i) => (
-            <div
-              key={i}
-              className={line.startsWith('$') ? 'terminal-prompt' : 'terminal-output'}
-            >
-              {line || '\u00A0'}
-              {!done && i === shownLines.length - 1 && <span className="cursor" />}
+
+        <div className="hero-content-col">
+          <div className="terminal">
+            <div className="terminal-bar">
+              <span className="dot dot-red" />
+              <span className="dot dot-yellow" />
+              <span className="dot dot-green" />
+              <span className="terminal-title">rohit@portfolio</span>
             </div>
-          ))}
-          {done && <span className="cursor" />}
-        </div>
-      </div>
+            <div className="terminal-body">
+              {shownLines.map((line, i) => (
+                <div
+                  key={i}
+                  className={line.startsWith('$') ? 'terminal-prompt' : 'terminal-output'}
+                >
+                  {line || '\u00A0'}
+                  {!done && i === shownLines.length - 1 && <span className="cursor" />}
+                </div>
+              ))}
+              {done && <span className="cursor" />}
+            </div>
+          </div>
 
-      <div className="hero-actions">
-        <a className="btn btn-primary" href={config.resumeUrl}>
-          View resume
-        </a>
-        <a className="btn" href={`mailto:${config.email}`}>
-          Contact
-        </a>
-        <a className="btn" href={config.github} target="_blank" rel="noreferrer">
-          GitHub
-        </a>
-      </div>
+          <div className="hero-actions">
+            <a className="btn btn-primary" href={config.resumeUrl}>
+              View resume
+            </a>
+            <a className="btn" href={`mailto:${config.email}`}>
+              Contact
+            </a>
+            <a className="btn" href={config.github} target="_blank" rel="noreferrer">
+              GitHub
+            </a>
+          </div>
 
-      <div className="metrics">
-        <div className="metric">
-          <div className="metric-value">{metrics.repoCount}</div>
-          <div className="metric-label">repos tracked</div>
-        </div>
-        <div className="metric">
-          <div className="metric-value">{metrics.languageCount}</div>
-          <div className="metric-label">languages</div>
-        </div>
-        <div className="metric">
-          <div className="metric-value">{metrics.starCount}</div>
-          <div className="metric-label">stars</div>
+          <div className="metrics">
+            <div className="metric">
+              <div className="metric-value">{metrics.repoCount}</div>
+              <div className="metric-label">repos tracked</div>
+            </div>
+            <div className="metric">
+              <div className="metric-value">{metrics.languageCount}</div>
+              <div className="metric-label">languages</div>
+            </div>
+            <div className="metric">
+              <div className="metric-value">{metrics.starCount}</div>
+              <div className="metric-label">stars</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

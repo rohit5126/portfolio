@@ -4,12 +4,14 @@ import Hero from './components/Hero';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
 import ProjectCard from './components/ProjectCard';
+import About from './components/About';
 import './App.css';
+
 
 // Edit these to your real details
 const CONFIG = {
   resumeUrl: '/resume.pdf',
-  email: 'you@example.com',
+  email: 'rohitrajput5126@gmail.com',
   github: 'https://github.com/rohit5126',
 };
 
@@ -55,6 +57,7 @@ function App() {
   return (
     <div className="page">
       <Hero config={CONFIG} metrics={metrics} />
+      <About />
       <Skills />
       <Experience />
 

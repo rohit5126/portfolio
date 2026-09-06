@@ -41,3 +41,35 @@ CREATE TABLE IF NOT EXISTS site_visits (
   page VARCHAR(255),
   visited_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE IF NOT EXISTS profile (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  location VARCHAR(255),
+  experience VARCHAR(100),
+  focus VARCHAR(255),
+  availability VARCHAR(100)
+);
+
+INSERT INTO profile (name) VALUES
+('Rohit Kumar');
+
+UPDATE profile SET
+  location = 'Gurugram',
+  experience = '4 years',
+  focus = 'DevOps / SRE / Cloud',
+  availability = 'Open to work'
+WHERE id = 1;
+
+CREATE TABLE IF NOT EXISTS certifications (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  issuer VARCHAR(255),
+  year VARCHAR(10),
+  url VARCHAR(500)
+);
+
+INSERT INTO certifications (name, issuer, year, url) VALUES
+('AWS Certified Solutions Architect – Associate', 'AWS', '2024', ''),
+('Certified Kubernetes Administrator (CKA)', 'CNCF', '2024', ''),
+('HashiCorp Certified: Terraform Associate', 'HashiCorp', '2023', '');

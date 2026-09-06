@@ -7,6 +7,8 @@ const API_ROOT = '/api';
 const SKILLS_URL = `${API_ROOT}/skills/`;
 const EXPERIENCE_URL = `${API_ROOT}/experience/`;
 const STATS_URL = `${API_ROOT}/stats/`;
+const PROFILE_URL = `${API_ROOT}/profile/`;
+const CERTIFICATIONS_URL = `${API_ROOT}/certifications/`;
 
 export const getProjects = () => axios.get(PROJECTS_URL);
 export const createProject = (project) => axios.post(PROJECTS_URL, project);
@@ -16,5 +18,7 @@ export const deleteProject = (id) => axios.delete(`${PROJECTS_URL}/${id}`);
 export const getSkills = () => axios.get(SKILLS_URL);
 export const getExperience = () => axios.get(EXPERIENCE_URL);
 export const getStats = () => axios.get(STATS_URL);
+export const getProfile = () => axios.get(PROFILE_URL);
+export const getCertifications = () => axios.get(CERTIFICATIONS_URL);
 export const logVisit = () =>
   axios.post(`${STATS_URL}/visit`, { page: window.location.pathname }).catch(() => {});

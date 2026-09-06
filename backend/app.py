@@ -6,6 +6,8 @@ from routes.projects import projects_bp
 from routes.skills import skills_bp
 from routes.experience import experience_bp
 from routes.stats import stats_bp
+from routes.profile import profile_bp
+from routes.certifications import certifications_bp
 
 load_dotenv()
 
@@ -16,6 +18,8 @@ app.register_blueprint(projects_bp, url_prefix='/api/projects')
 app.register_blueprint(skills_bp, url_prefix='/api/skills')
 app.register_blueprint(experience_bp, url_prefix='/api/experience')
 app.register_blueprint(stats_bp, url_prefix='/api/stats')
+app.register_blueprint(profile_bp, url_prefix='/api/profile')
+app.register_blueprint(certifications_bp, url_prefix='/api/certifications')
 
 @app.route('/')
 def index():

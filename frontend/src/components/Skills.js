@@ -37,11 +37,17 @@ function Skills() {
           {Object.keys(grouped).length > 1 && (
             <div className="skills-category-label">{category}</div>
           )}
-          <div className="skills-grid">
+          <div className="skills-bars">
             {items.map((s) => (
-              <span className="skill-flag" key={s.name}>
-                --{s.name.toLowerCase()}
-              </span>
+              <div className="skill-bar-row" key={s.name}>
+                <div className="skill-bar-label">
+                  <span>{s.name}</span>
+                  <span>{s.proficiency}%</span>
+                </div>
+                <div className="skill-bar-track">
+                  <div className="skill-bar-fill" style={{ width: `${s.proficiency}%` }} />
+                </div>
+              </div>
             ))}
           </div>
         </div>
