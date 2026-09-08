@@ -18,7 +18,7 @@ const CONFIG = {
 };
 
 // Repos that shouldn't show up in the grid (your profile repo, private scratch work, etc.)
-const EXCLUDED_REPOS = ['rohit5126', 'Private-project', 'portfolio','ansible-practice','devboard-kubernetes-kind-cluster',''];
+const EXCLUDED_REPOS = ['rohit5126','linux-github-playbook','Private-project','ansible-practice','devboard-kubernetes-kind-cluster'];
 
 function App() {
   const [projects, setProjects] = useState([]);

@@ -70,6 +70,6 @@ CREATE TABLE IF NOT EXISTS certifications (
 );
 
 INSERT INTO certifications (name, issuer, year, url) VALUES
-('AWS Certified Solutions Architect – Associate', 'AWS', '2024', ''),
-('Certified Kubernetes Administrator (CKA)', 'CNCF', '2024', ''),
-('HashiCorp Certified: Terraform Associate', 'HashiCorp', '2023', '');
+('Devops Engineer Course', 'TrainwithShubham', '2026', ''),
+('Devops mastery', 'KodeKloud', '2025', ''),
+('Python for Data Science AI and Development', 'IBM', '2024', '');

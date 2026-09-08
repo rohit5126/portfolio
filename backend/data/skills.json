@@ -1,9 +1,16 @@
 [
+  { "name": "Python", "category": "Languages", "proficiency": 85 },
+  { "name": "Bash Script", "category": "Languages", "proficiency": 80 },
+  { "name": "Linux Admin", "category": "OS", "proficiency": 90 },
+  { "name": "Windows", "category": "OS", "proficiency": 90 },
   { "name": "Docker", "category": "DevOps", "proficiency": 90 },
   { "name": "Kubernetes", "category": "DevOps", "proficiency": 80 },
+  { "name": "Helm", "category": "DevOps", "proficiency": 80 },
   { "name": "Terraform", "category": "DevOps", "proficiency": 75 },
   { "name": "Ansible", "category": "DevOps", "proficiency": 70 },
+  { "name": "Github Actions", "category": "CI/CD", "proficiency": 80 },
+  { "name": "ArgoCD", "category": "CI/CD", "proficiency": 80 },
   { "name": "AWS", "category": "Cloud", "proficiency": 80 },
-  { "name": "Python", "category": "Languages", "proficiency": 85 },
-  { "name": "JavaScript", "category": "Languages", "proficiency": 70 }
+  { "name": "Azure", "category": "Cloud", "proficiency": 70 }
+  
 ]
