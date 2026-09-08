@@ -77,9 +77,11 @@ def main():
     conn = get_connection()
     cursor = conn.cursor()
 
+    ALLOWED_FORKS = {'90DaysOfDevOps'}
+
     for repo in repos:
-        if repo.get('fork'):
-            continue  # skip forked repos, remove this line to include them
+        if repo.get('fork') and repo['name'] not in ALLOWED_FORKS:
+            continue
         upsert_project(cursor, repo)
 
     conn.commit()
