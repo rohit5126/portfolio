@@ -36,10 +36,20 @@ function ForkIcon() {
 function ProjectCard({ project }) {
   const color = languageColor(project.language);
   const topics = project.topics ? project.topics.split(',').filter(Boolean) : [];
+  const hasImage = Boolean(project.image_url);
 
   return (
-    <article className="project-card" style={{ '--lang-color': color }}>
+    <article
+      className={hasImage ? 'project-card has-image' : 'project-card'}
+      style={{ '--lang-color': color }}
+    >
       <div className="project-card-bar" />
+      {hasImage && (
+        <div
+          className="project-card-bg"
+          style={{ backgroundImage: `url(${project.image_url})` }}
+        />
+      )}
       <div className="project-card-body">
         <div className="project-card-head">
           <h3>{project.name}</h3>

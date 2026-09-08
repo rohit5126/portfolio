@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS projects (
   stars INT DEFAULT 0,
   forks INT DEFAULT 0,
   topics VARCHAR(500),
+  image_url VARCHAR(500),
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
@@ -73,3 +74,4 @@ INSERT INTO certifications (name, issuer, year, url) VALUES
 ('Devops Engineer Course', 'TrainwithShubham', '2026', ''),
 ('Devops mastery', 'KodeKloud', '2025', ''),
 ('Python for Data Science AI and Development', 'IBM', '2024', '');
+

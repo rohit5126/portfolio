@@ -52,6 +52,7 @@ def upsert_project(cursor, repo):
     existing = cursor.fetchone()
 
     if existing:
+        # image_url intentionally excluded — preserves manually set screenshots
         cursor.execute(
             '''UPDATE projects SET name=%s, description=%s, live_url=%s,
                language=%s, stars=%s, forks=%s, topics=%s WHERE github_url=%s''',

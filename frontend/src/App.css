@@ -649,3 +649,47 @@
   white-space: nowrap;
   font-family: var(--font-mono);
 }
+
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.35;
+  filter: saturate(0.9);
+  z-index: 0;
+  transition: opacity 0.25s ease, transform 0.4s ease;
+}
+
+.project-card.has-image:hover .project-card-bg {
+  opacity: 0.55;
+  transform: scale(1.04);
+}
+
+.project-card.has-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 19, 26, 0.55) 0%,
+    rgba(15, 19, 26, 0.88) 60%,
+    rgba(15, 19, 26, 0.97) 100%
+  );
+  z-index: 1;
+}
+
+.project-card.has-image .project-card-body {
+  position: relative;
+  z-index: 2;
+}
+
+.project-card.has-image .project-card-bar {
+  z-index: 3;
+}
