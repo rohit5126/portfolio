@@ -39,17 +39,29 @@ function ProjectCard({ project }) {
   const hasImage = Boolean(project.image_url);
 
   return (
-    <article
-      className={hasImage ? 'project-card has-image' : 'project-card'}
-      style={{ '--lang-color': color }}
-    >
+    <article className="project-card" style={{ '--lang-color': color }}>
       <div className="project-card-bar" />
+
       {hasImage && (
-        <div
-          className="project-card-bg"
-          style={{ backgroundImage: `url(${project.image_url})` }}
-        />
+        <a
+          className="project-card-image-link"
+          href={project.github_url}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img
+            className="project-card-image"
+            src={project.image_url}
+            alt={`${project.name} screenshot`}
+            loading="lazy"
+          />
+          <div className="project-card-image-overlay">
+            <span>View project →</span>
+          </div>
+        </a>
       )}
+
+
       <div className="project-card-body">
         <div className="project-card-head">
           <h3>{project.name}</h3>
